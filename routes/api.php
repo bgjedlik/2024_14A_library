@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,9 @@ Route::get('/books-by-type-id/{id}',
 
 Route::get('/books-by-author-fullname/{name}/{surname}',
     [BookController::class,'booksByAuthorFullname']);
+
+Route::get('/borrow-books',[StudentController::class,'borrowBooks']);
+
+Route::post('/borrow-book',[StudentController::class,'borrowBook']);
+Route::post('/return-book',[StudentController::class,'returnBook']);
+
